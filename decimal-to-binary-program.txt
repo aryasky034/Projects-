@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int decimalnum;
+    printf("Enter your decimal number to be converted:");
+    scanf("%d",&decimalnum);
+    int answer=0;
+    int num=1;
+     int pow=num;
+    while (decimalnum>0){
+        int remainder0=decimalnum%2;
+        decimalnum=decimalnum/2;
+        answer+=(remainder0*pow);
+        pow=pow*10;
+       
+    } printf("Answer after conversion:%d",answer);
+    return 0;
+}

@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    printf("Welcome to simple interest and compound interest calculator program...\n");
+    printf("you can select from the following options:\n");
+    printf("simple interest=1\ncompound interest=2\n");
+    int option;
+    printf("Select your option:");
+    scanf("%d",&option);
+    if(option>2||option<=0){
+        printf("Invalid Input!!!");
+    }else if(option==1){
+        printf("Selected simple interest calculator...");
+        printf("you can select from the following options:\n");
+        printf("calculation of simple interest missing value of Principal amount=1\ncalculation of simple interest missing value of Rate=2\ncalculation of simple interest missing value of Time=3\ncalculation of simple interest with all values provided=4\n");
+        printf("Enter your selection from the above:");
+        int option2;
+        scanf("%d",&option2);
+        if(option2>4||option2<=0){
+            printf("Invalid Input!!!");
+            }else{
+                switch(option2){
+                    case 1:
+                    double Rate;
+                    double Time;
+                    double SimpleInterest;
+                    printf("Enter Rate: ");
+                    scanf("%lf",&Rate);
+                    printf("Enter Time: ");
+                    scanf("%lf",&Time);
+                    printf("Enter Simple Interest: ");
+                    scanf("%lf",&SimpleInterest);
+                    double Principal = (SimpleInterest * 100) / (Rate * Time);
+                    printf("Principal Amount:%.2lf",Principal);
+                    break;
+                    
+                    case 2:
+                    double Principal2;
+                    double Time2;
+                    double SimpleInterest2;
+                    printf("Enter Principal: ");
+                    scanf("%lf",&Principal2);
+                    printf("Enter Time: ");
+                    scanf("%lf",&Time2);
+                    printf("Enter Simple Interest: ");
+                    scanf("%lf",&SimpleInterest2);
+                    double Rate2 = (SimpleInterest2 * 100) / (Principal2 * Time2);
+                    printf("Rate: %.2lf%%\n", Rate2);
+                    break;
+                    
+                    case 3:
+                    double Rate3;
+                    double Principal3;
+                    double SimpleInterest3;
+                    printf("Enter Principal: ");
+                    scanf("%lf",&Principal3);
+                    printf("Enter Rate: ");
+                    scanf("%lf",&Rate3);
+                    printf("Enter Simple Interest: ");
+                    scanf("%lf",&SimpleInterest3);
+                    double Time3 = (SimpleInterest3 * 100) / (Principal3 * Rate3);
+                    printf("Time: %.2lf\n", Time3);
+                    break;
+                    
+                    case 4:
+                    double Rate4;
+                    double Time4;
+                    double Principal4;
+                    printf("Enter Rate: ");
+                    scanf("%lf",&Rate4);
+                    printf("Enter Time: ");
+                    scanf("%lf",&Time4);
+                    printf("Enter Principal: ");
+                    scanf("%lf",&Principal4);
+                    double SimpleInterest4 = (Principal * Rate * Time) / 100;
+                    printf("Simple Interest: %.2lf\n", SimpleInterest4);
+                    break;
+                    
+                }
+            }
+        }else if(option==2){
+            printf("Selected compound interest calculator...");
+            printf("you can select from the following options:\n");
+            printf("calculation of compound interest missing value of Principal amount=1\ncalculation of compound interest missing value of Rate=2\ncalculation of compound interest missing value of Time=3\ncalculation of compound interest with all values provided=4\n");
+            printf("Enter your selection from the above:");
+            int option2;
+            scanf("%d",&option2);
+            if(option2>4||option2<=0){
+                printf("Invalid Input!!!");
+                }else{
+                    switch(option2){
+                        case 1:
+                        double Rate5;
+                        double Amount5;
+                        double Time5;
+                        printf("Enter Rate: ");
+                        scanf("%lf",&Rate5);
+                        printf("Enter Amount: ");
+                        scanf("%lf",&Amount5);
+                        printf("Enter Time: ");
+                        scanf("%lf",&Time5);
+                        double Principal5 = Amount5 / pow((1 + Rate5 / 100), Time5);
+                        printf("Principal Amount:%.2lf",Principal5);
+                        break;
+                    
+                        case 2:
+                        double Amount6;
+                        double Principal6;
+                        double Time6;
+                        printf("Enter Amount: ");
+                        scanf("%lf",&Amount6);
+                        printf("Enter Principal6: ");
+                        scanf("%lf",&Principal6);
+                        printf("Enter Time: ");
+                        scanf("%lf",&Time6);
+                        double Rate6 = (pow((Amount6 / Principal6), (1 / Time6)) - 1) * 100;
+                        printf("Rate: %.2lf%", Rate6);
+                        break;
+                    
+                        case 3:
+                        double Amount7;
+                        double Rate7;
+                        double Principal7;
+                        printf("Enter Amount: ");
+                        scanf("%lf",&Amount7);
+                        printf("Enter Rate: ");
+                        scanf("%lf",&Rate7);
+                        printf("Enter Principal: ");
+                        scanf("%lf",&Principal7);
+                        double Time7 = log(Amount7 / Principal7) / log(1 + Rate7 / 100);
+                        printf("Time: %.2lf\n", Time7);
+                        break;
+                    
+                        case 4:
+                        double CompoundInterest8;
+                        double Amount8;
+                        double Rate8;
+                        double Principal8;
+                        double Time8;
+                        printf("Enter Principal: ");
+                        scanf("%lf",&Principal8);
+                        printf("Enter Rate: ");
+                        scanf("%lf",&Rate8);
+                        printf("Enter Time: ");
+                        scanf("%lf",&Time8);
+                        Amount8 = Principal8 * pow(1 + Rate8 / 100, Time8);
+                        CompoundInterest8 = Amount8 - Principal8;
+                        printf("\nFinal Amount: %.2lf\n", Amount8);
+                        printf("Compound Interest Earned: %.2lf\n", CompoundInterest8);
+                        break;
+                    
+                }
+            }
+        }
+        return 0;
+}

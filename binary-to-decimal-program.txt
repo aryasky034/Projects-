@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int binarynum;
+    printf("Enter your binary number to be converted:");
+    scanf("%d",&binarynum);
+    int answer=0;
+    int num=1;
+     int pow=num;
+    while (binarynum>0){
+        int remainder0=binarynum%10;
+        binarynum=binarynum/10;
+        answer+=(remainder0*pow);
+        pow=pow*2;
+       
+    } printf("Answer after conversion:%d",answer);
+    return 0;
+}
